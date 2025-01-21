@@ -20,7 +20,7 @@ app.use('/api/auth', authRoutes);
 
 
 mongoose
-  .connect(process.env.MONGO_URI, {  useUnifiedTopology: true })
+  .connect('mongodb+srv://Ashwini:Ashvni09@cluster0.96ohe.mongodb.net/My_Vinsa?retryWrites=true&w=majority&appName=Cluster0', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
@@ -112,5 +112,8 @@ app.post('/login', async (req, res) => {
 
 
 // Start server
-const PORT = process.env.PORT ||4000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+app.listen(4000,()=>
+  {
+      console.log('server is running on the port 4000')
+  });
